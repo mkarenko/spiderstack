@@ -1,0 +1,7 @@
+{
+  "name": "spiderstack",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
