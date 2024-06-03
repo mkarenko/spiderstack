@@ -1,7 +1,6 @@
-import {IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact} from '@ionic/react';
+import {IonApp, IonContent, IonPage, IonSplitPane, setupIonicReact} from '@ionic/react';
 import {IonReactRouter} from '@ionic/react-router';
-import {Redirect, Route} from 'react-router-dom';
-import BurgerMenu from './components/BurgerMenu/BurgerMenu';
+
 import '@ionic/react/css/core.css';
 import '@ionic/react/css/normalize.css';
 import '@ionic/react/css/structure.css';
@@ -16,21 +15,46 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+
+/* Theme variables of Tailwindcss*/
 import './theme/tailwind.css';
+
 import Router from './router/Router';
+import BurgerMenu from './components/BurgerMenu/BurgerMenu';
+
+import background1 from './assets/background_1.jpg';
+import background2 from './assets/background_2.jpg';
+import background3 from './assets/background_3.jpg';
+import background4 from './assets/background_4.jpg';
+import {useState} from 'react';
+import {RecoilRoot} from 'recoil';
 
 setupIonicReact();
 
 const App: React.FC = () => {
+	const [background, setBackground] = useState(background1);
+
+	const changeBackground = () => {
+		setBackground(background === background1 ? background2 : background1);
+	};
+
+	// style={{backgroundImage: `url(${background1})`, backgroundSize: 'cover'}}
+
 	return (
-		<IonApp>
-			<IonReactRouter>
-				<IonSplitPane contentId='main'>
-					{/* <BurgerMenu /> */}
-					<Router />
-				</IonSplitPane>
-			</IonReactRouter>
-		</IonApp>
+		<RecoilRoot>
+			<IonApp>
+				<IonReactRouter>
+					<IonSplitPane contentId='main'>
+						<IonPage id='main'>
+							<IonContent>
+								<Router />
+							</IonContent>
+						</IonPage>
+						<BurgerMenu />
+					</IonSplitPane>
+				</IonReactRouter>
+			</IonApp>
+		</RecoilRoot>
 	);
 };
 

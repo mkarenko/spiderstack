@@ -1,16 +1,12 @@
 import {FC} from 'react';
-import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
-import PlayingCard from '../components/PlayingCard';
+import {IonContent, IonPage} from '@ionic/react';
+import GameBoard from './GameBoard';
 
 const HomePage: FC = () => {
 	return (
 		<IonPage>
-			<IonContent fullscreen>
-				{Array.from({length: 53}, (_, index) => (
-					<div className='grid grid-cols-10'>
-						<PlayingCard key={index} />
-					</div>
-				))}
+			<IonContent>
+				<GameBoard />
 			</IonContent>
 		</IonPage>
 	);

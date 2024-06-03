@@ -1,0 +1,43 @@
+.ion-content {
+	--background: #f8f8f8;
+}
+
+.ion-item {
+	--color: #333;
+	--background-hover: #e0e0e0;
+}
+
+.ion-label {
+	font-size: 1.2rem;
+	padding: 10px;
+}
+
+.ion-menu {
+	--width: 60px;
+}
+
+.menu-label {
+	display: none;
+}
+
+.ion-item ion-label {
+	display: block;
+}
+
+.ion-item ion-icon {
+	font-size: 24px;
+	color: #333;
+}
+
+.ion-item {
+	--padding-start: 0;
+	justify-content: center;
+}
+
+.ion-menu[style*='width: 200px'] .menu-label {
+	display: block;
+}
+
+.ion-menu[style*='width: 60px'] ion-label {
+	display: none;
+}
